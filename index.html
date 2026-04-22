@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="color-scheme" content="light dark">
+		<meta
+			name="description"
+			content="南昌航空大学软件工程专业培养计划静态展示站，围绕课程体系、培养目标、毕业要求与指标点进行可视化整理。"
+		>
+		<title>南昌航空大学软件工程专业培养计划概览</title>
+        <link rel="shortcut icon"  href="favicon.ico">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@500;700;900&display=swap"
+			rel="stylesheet"
+		>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">跳到正文</a>
+		<header class="site-header">
+			<div class="shell site-header__inner">
+				<div class="brand-block">
+					<p class="brand-block__eyebrow">NCHU / Software Engineering</p>
+					<a class="brand-block__title" href="#top">南昌航空大学 · 软件工程 · 培养计划概览</a>
+				</div>
+				<nav class="main-nav" aria-label="页面导航">
+					<a href="#overview">概览</a>
+					<a href="#curriculum">培养计划</a>
+					<a href="#directions">方向选择</a>
+					<a href="#schedule">学期安排</a>
+					<a href="#course-stats">课程统计</a>
+					<a href="#objectives">培养目标</a>
+					<a href="#requirements">毕业要求</a>
+				</nav>
+				<button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换明暗主题"></button>
+			</div>
+		</header>
+
+		<main id="main-content">
+			<section class="hero shell" id="top">
+				<div class="hero__copy reveal">
+					<p class="section-tag">2018 版培养方案整理</p>
+					<h1>把培养计划看成一张能直接读懂的学习地图。</h1>
+					<p class="hero__lead">
+						这个页面以课程体系为主线，把培养目标、毕业要求和指标点压缩成一套可浏览、可切换、可视化的静态信息站，方便在校学生快速理解专业培养结构。
+					</p>
+					<div class="hero__actions">
+						<a class="button button--primary" href="#curriculum">先看课程体系</a>
+						<a class="button button--ghost" href="#requirements">查看指标点</a>
+					</div>
+					<ul class="hero__notes">
+						<li>课程体系优先呈现，目标与指标点作为支撑层。</li>
+						<li>全站使用原生 JavaScript 渲染与交互。</li>
+						<li>图表与图标库均通过开源 CDN 接入。</li>
+					</ul>
+				</div>
+				<aside class="hero__panel reveal" aria-label="培养方案速览">
+					<div class="hero__panel-head">
+						<p class="section-tag section-tag--muted">培养方案速览</p>
+						<h2>课程、方向、要求与实践一页看全</h2>
+					</div>
+					<div class="stat-grid" id="hero-stats"></div>
+					<div class="hero__panel-foot">
+						<p>
+							页面依据南昌航空大学软件学院保存的 3 个 2018 版网页整理：培养目标、毕业要求及具体指标点、课程体系。
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="section shell" id="overview">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Overview</p>
+						<h2>为什么先看培养计划</h2>
+					</div>
+					<p>
+						对在校学生来说，课程体系决定了学习节奏、方向选择和实践路线。培养目标解释毕业 5 年后的发展预期，毕业要求和指标点则回答这些课程最终要支撑什么能力。
+					</p>
+				</div>
+				<div class="overview-grid">
+					<article class="overview-copy reveal">
+						<p>
+							这个专业的培养逻辑很明确：先打牢通识与科学基础，再进入计算与系统能力训练，随后通过软件工程核心课和六个方向课程完成差异化培养，最后用课程设计、实训、实习和毕业设计把能力落到真实工程场景里。
+						</p>
+						<p>
+							所以本页面不按原网页顺序堆内容，而是按“看懂培养过程”的顺序重组信息：先总览，再看模块，再看方向，最后再回到培养目标和毕业要求。
+						</p>
+					</article>
+					<div class="glance-grid" id="glance-cards"></div>
+				</div>
+			</section>
+
+			<section class="section shell" id="curriculum">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Curriculum</p>
+						<h2>培养计划主结构</h2>
+					</div>
+					<p>
+						课程体系页面最适合作为整个站点的骨架。这里把原始表格压缩成五个主模块，并用图表展示网页中可直接识别的结构单元与代表性内容数量。
+					</p>
+				</div>
+				<div class="curriculum-layout">
+					<div class="module-stack" id="module-list"></div>
+					<aside class="chart-panel chart-panel--sticky reveal">
+						<div class="panel-heading">
+							<p class="section-tag section-tag--muted">Chart 01</p>
+							<h3>培养结构单元</h3>
+							<p>按课程体系网页可直接识别的结构层级与代表性内容整理，不替代原始完整学分总表。</p>
+						</div>
+						<div class="chart-wrap">
+						<canvas id="curriculum-chart" aria-label="培养结构单元图表"></canvas>
+					</div>
+					</aside>
+				</div>
+			</section>
+
+			<section class="section shell" id="journey">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Learning Journey</p>
+						<h2>培养推进逻辑</h2>
+					</div>
+					<p>
+						原始课程表很长，但专业的推进顺序并不复杂。把它拆开看，本质上是一个从公共基础到工程落地的四段式路径。
+					</p>
+				</div>
+				<div class="journey-grid" id="journey-rail"></div>
+			</section>
+
+			<section class="section shell" id="directions">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Directions</p>
+						<h2>方向选择与实践通道</h2>
+					</div>
+					<p>
+						课程体系中的差异化培养主要体现在六个专业方向上。点击左侧切换，可以快速比较每条路线的学习焦点、代表性课程与适配实践模块。
+					</p>
+				</div>
+				<div class="direction-layout">
+					<div class="direction-tabs" id="direction-tabs" aria-label="专业方向切换"></div>
+					<div class="direction-detail reveal" id="direction-detail"></div>
+				</div>
+			</section>
+
+			<section class="section shell" id="schedule">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Schedule</p>
+						<h2>学期课程安排</h2>
+					</div>
+					<p>点击学期标签即可查看当学期开设的全部课程，包括学分、考核方式与课程类别。方向选修课均带有方向标注，可展开查看。</p>
+				</div>
+				<div class="semester-switcher" id="semester-tabs" role="tablist" aria-label="学期切换"></div>
+				<div id="semester-content"></div>
+			</section>
+
+			<section class="section shell" id="course-stats">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Statistics</p>
+						<h2>课程数据统计</h2>
+					</div>
+					<p>从学分分布、课程类别两个维度对全部必修课程进行量化展示，快速建立对培养方案结构的直观认识。</p>
+				</div>
+				<div class="stats-kpi" id="stats-kpi"></div>
+				<div class="stats-charts">
+					<div class="chart-panel reveal">
+						<div class="panel-heading">
+							<p class="section-tag section-tag--muted">Chart 04</p>
+							<h3>各学期必修学分分布</h3>
+							<p>通识、学科基础、专业核心与实践四类必修课程学分的学期分布。</p>
+						</div>
+						<div class="chart-wrap chart-wrap--tall">
+							<canvas id="semester-credits-chart" aria-label="各学期必修学分堆叠柱状图"></canvas>
+						</div>
+					</div>
+					<div class="chart-panel reveal">
+						<div class="panel-heading">
+							<p class="section-tag section-tag--muted">Chart 05</p>
+							<h3>课程类别学分占比</h3>
+							<p>各培养平台在全部开设课程学分中的权重占比。</p>
+						</div>
+						<div class="chart-wrap">
+							<canvas id="category-dist-chart" aria-label="课程类别学分占比甜甜圈图"></canvas>
+						</div>
+					</div>
+					<div class="chart-panel reveal">
+						<div class="panel-heading">
+							<p class="section-tag section-tag--muted">Chart 06</p>
+							<h3>各类别授课学时分布</h3>
+							<p>除实践周课外，各课程类别的实际课堂学时总量对比。</p>
+						</div>
+						<div class="chart-wrap">
+							<canvas id="hours-dist-chart" aria-label="各类别授课学时水平条形图"></canvas>
+						</div>
+					</div>
+					<div class="chart-panel reveal">
+						<div class="panel-heading">
+							<p class="section-tag section-tag--muted">Chart 07</p>
+							<h3>学期必修学分变化</h3>
+							<p>逐学期必修课程总学分走势，帮助评估每学期学业负担的相对轻重。</p>
+						</div>
+						<div class="chart-wrap">
+							<canvas id="sem-trend-chart" aria-label="学期必修学分变化折线图"></canvas>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section shell" id="objectives">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Objectives</p>
+						<h2>培养目标</h2>
+					</div>
+					<p>
+						培养目标描述的是学生毕业后经过约 5 年实践，应当达到的职业状态。它不是课程目录，而是课程体系最终想推到的位置。
+					</p>
+				</div>
+				<div class="objectives-grid" id="objectives-grid"></div>
+			</section>
+
+			<section class="section shell" id="requirements">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Requirements</p>
+						<h2>毕业要求与指标点</h2>
+					</div>
+					<p>
+						这一部分保留原网页的 12 项毕业要求和全部指标点，并用两张图表先给出整体分布，再支持逐项展开查看细节。
+					</p>
+				</div>
+				<div class="requirements-layout">
+					<aside class="requirements-charts">
+						<div class="chart-panel reveal">
+							<div class="panel-heading">
+								<p class="section-tag section-tag--muted">Chart 02</p>
+								<h3>各项毕业要求的指标点数量</h3>
+								<p>用于快速判断能力结构的展开密度。</p>
+							</div>
+							<div class="chart-wrap chart-wrap--tall">
+							<canvas id="indicator-chart" aria-label="指标点数量柱状图"></canvas>
+						</div>
+						</div>
+						<div class="chart-panel reveal">
+							<div class="panel-heading">
+								<p class="section-tag section-tag--muted">Chart 03</p>
+								<h3>能力簇分布</h3>
+								<p>把 12 项毕业要求归并成四组能力簇，观察整体重心。</p>
+							</div>
+							<div class="chart-wrap">
+							<canvas id="cluster-chart" aria-label="能力簇分布图"></canvas>
+						</div>
+						</div>
+					</aside>
+					<div class="requirements-list" id="requirements-accordion"></div>
+				</div>
+			</section>
+
+			<section class="section shell" id="sources">
+				<div class="section-heading reveal">
+					<div>
+						<p class="section-tag">Sources</p>
+						<h2>整理说明与原始来源</h2>
+					</div>
+					<p>
+						页面尽量忠实于原始 2018 版网页内容，但为了提高可读性做了重新编排与可视化表达。若需逐条核对，请直接打开下列原始保存网页。
+					</p>
+				</div>
+				<div class="source-board reveal">
+					<div class="source-board__note">
+						<p>
+							图表展示的是结构信息与指标点数量，不等同于原始课程表中的全部精细学分安排。若需做选课、培养方案对照或审核，仍应以原网页内容为准。
+						</p>
+					</div>
+					<ul class="source-list">
+						<li>
+							<a href="https://ss.nchu.edu.cn/bkspy/bkjx/content_58286" target="_blank" rel="noreferrer">
+								软件工程专业本科培养目标(2018版)
+							</a>
+						</li>
+						<li>
+							<a href="https://ss.nchu.edu.cn/bkspy/bkjx/content_58430" target="_blank" rel="noreferrer">
+								软件工程专业毕业要求及具体的指标点(2018版)
+							</a>
+						</li>
+						<li>
+							<a href="https://ss.nchu.edu.cn/bkspy/bkjx/content_58435" target="_blank" rel="noreferrer">
+								软件工程专业课程体系(2018版)
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="shell site-footer__inner">
+				<p>南昌航空大学·软件工程·专业培养计划</p>
+				<a href="https://blog.mahoo12138.cn/" target="_blank" rel="noreferrer">Mahoo12138 整理</a>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
