@@ -358,6 +358,7 @@ const siteData = {
     { name: "职业生涯规划", credits: 1, hours: 22, category: "通识必修", assessment: "C", semester: 1 },
     { name: "体育（一）", credits: 1, hours: 36, category: "通识必修", assessment: "C", semester: 1 },
     // 通识必修 ── 第2学期
+    { name: "形势与政策", credits: 2, hours: 32, category: "通识必修", assessment: "C", semester: 2 },
     { name: "马克思主义基本原理概论", credits: 3, hours: 48, category: "通识必修", assessment: "S", semester: 2 },
     { name: "大学英语读写译2", credits: 3, hours: 48, category: "通识必修", assessment: "S", semester: 2 },
     { name: "大学英语听说2", credits: 3, hours: 48, category: "通识必修", assessment: "S", semester: 2 },
@@ -389,6 +390,8 @@ const siteData = {
     { name: "操作系统A", credits: 4, hours: 64, category: "学科基础", assessment: "S", semester: 4 },
     // 学科基础 ── 第5学期
     { name: "网络及其计算", credits: 4, hours: 64, category: "学科基础", assessment: "S", semester: 5 },
+    // 专业核心 ── 第3学期
+    { name: "面向对象程序设计A", credits: 4.5, hours: 72, category: "专业核心", assessment: "S", semester: 3 },
     // 专业核心 ── 第4学期
     { name: "软件工程", credits: 3.5, hours: 56, category: "专业核心", assessment: "S", semester: 4 },
     { name: "WEB程序设计", credits: 3, hours: 48, category: "专业核心", assessment: "C", semester: 4 },
@@ -399,6 +402,8 @@ const siteData = {
     // 专业核心 ── 第6学期
     { name: "软件构造", credits: 3, hours: 48, category: "专业核心", assessment: "C", semester: 6 },
     { name: "软件设计与体系结构", credits: 3, hours: 48, category: "专业核心", assessment: "C", semester: 6 },
+    // 实践 ── 第1学期
+    { name: "军训", credits: 2, hours: 0, category: "实践", assessment: "C", semester: 1, note: "3 周" },
     // 实践 ── 第2学期（含小学期）
     { name: "程序设计基础课程设计", credits: 2, hours: 0, category: "实践", assessment: "C", semester: 2, note: "2 周" },
     { name: "软件开发实训Ⅰ", credits: 3, hours: 0, category: "实践", assessment: "C", semester: 2, note: "4 周 · 小学期" },
@@ -412,8 +417,11 @@ const siteData = {
     // 实践 ── 第7学期
     { name: "专业实践", credits: 4, hours: 0, category: "实践", assessment: "C", semester: 7, note: "8 周" },
     { name: "毕业实习", credits: 2, hours: 0, category: "实践", assessment: "C", semester: 7, note: "4 周" },
+    // 实践 ── 第7学期
+    { name: "毕业设计（论文）", credits: 0, hours: 0, category: "实践", assessment: "C", semester: 7, note: "14 周（2周）" },
+
     // 实践 ── 第8学期
-    { name: "毕业设计（论文）", credits: 12, hours: 0, category: "实践", assessment: "C", semester: 8, note: "14 周" },
+    { name: "毕业设计（论文）", credits: 12, hours: 0, category: "实践", assessment: "C", semester: 8, note: "14 周（12周）" },
     // 方向选修 ── 方向1·软件设计与开发
     { name: "前端技术", credits: 3, hours: 48, category: "方向选修", assessment: "C", semester: 5, direction: "方向1·软件设计与开发" },
     { name: "移动终端编程技术", credits: 3, hours: 48, category: "方向选修", assessment: "C", semester: 6, direction: "方向1·软件设计与开发" },
